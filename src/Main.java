@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println("\nDigit Letter : ");
         for (int i = 0; i < 15; i++){
-            System.out.print(random.getRandomDigitCharacter());
+            System.out.print((int)random.getRandomDigitCharacter());
         }
     }
 }
