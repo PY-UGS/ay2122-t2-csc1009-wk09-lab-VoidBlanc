@@ -1,46 +1,51 @@
-import static org.junit.Assert.*;
-import org.junit.*;
+import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.*;
 public class RandomCharacterTest {
-
-    @org.junit.Test
+    RandomCharacter random;
+    @BeforeEach
+    void setUp(){
+        random = new RandomCharacter();        
+    }
+    
+    @org.junit.jupiter.api.Test
     public void getRandomLowerCaseLetter() {
-        RandomCharacter random = new RandomCharacter();
         for (int i = 0; i < 15; i++){
             char letter = random.getRandomLowerCaseLetter();
             assertTrue(letter <= 'z' && letter >= 'a');
         }
     }
 
-    @org.junit.Test
+    @org.junit.jupiter.api.Test
     public void getRandomUpperCaseLetter() {
-        RandomCharacter random = new RandomCharacter();
         for (int i = 0; i < 15; i++){
             char letter = random.getRandomUpperCaseLetter();
             assertTrue(letter <= 'Z' && letter >= 'A');
         }
     }
 
-    @org.junit.Test
+    @org.junit.jupiter.api.Test
     public void getRandomDigitCharacter() {
-        RandomCharacter random = new RandomCharacter();
         for (int i = 0; i < 15; i++){
             char letter = random.getRandomDigitCharacter();
             assertTrue(letter <= '9' && letter >= '0');
         }
     }
 
-    @org.junit.Test
+    @org.junit.jupiter.api.Test
     public void getRandomPrimeDigitCharacter() {
-        RandomCharacter random = new RandomCharacter();
         for (int i = 0; i < 15; i++){
-            char digit = random.getRandomDigitCharacter();
-            assertTrue(random.isPrime( Character.getNumericValue(digit)));
+            int digit = random.getRandomPrimeNumber();
+            assertTrue(random.isPrime(digit));
 
         }
     }
 
-    @org.junit.Test
+    @org.junit.jupiter.api.Test
     public void getRandomCharacter() {
+        for (int i = 0; i < 15; i++){
+            char letter = random.getRandomCharacter();
+            assertTrue(letter <= 125 && letter >= 33);
 
+        }
     }
 }
