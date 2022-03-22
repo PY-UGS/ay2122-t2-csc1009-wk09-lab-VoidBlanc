@@ -3,7 +3,7 @@ import java.util.Random;
 public class RandomCharacter{
 
      // To get the random lower case character based on ascii
-    // Start : 'A'    End : 'Z'
+    // Start : 'a'    End : 'z'
     public char getRandomLowerCaseLetter(){
         int range = 'z' - 'a' + 1;
         return (char)((Math.random()  * range) + 'a');
